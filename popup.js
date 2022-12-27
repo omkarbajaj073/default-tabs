@@ -1,5 +1,6 @@
 
 document.addEventListener("DOMContentLoaded", function(e) {
+  // chrome.storage.local.clear();
   var elem = document.getElementById('add-link');
   elem.addEventListener('click', function () {
     let inp = document.getElementById('input-link');
@@ -8,17 +9,21 @@ document.addEventListener("DOMContentLoaded", function(e) {
 
     chrome.storage.local.get("default-tabs-links", (links) => {
       let urls = links['default-tabs-links'];
+      // console.log(urls);
       urls = [ url, ...urls ];
-      console.log(urls);
       chrome.storage.local.set({"default-tabs-links": urls});
-    })
-
-    // refresh the popup
+    });
+    window.location.reload();
   })
 
 
   chrome.storage.local.get("default-tabs-links", (links) => {
     let urls = links['default-tabs-links'];
+    if (urls === undefined) {
+      chrome.storage.local.set({"default-tabs-links": []})
+      return;
+    }
+    console.log(urls);
     let cnt = 1;
     urls.forEach((url) => {
       let elem = document.createElement("div");
@@ -36,7 +41,6 @@ document.addEventListener("DOMContentLoaded", function(e) {
     for (let i = 1; i <= urls.length; i++) {
       let but = document.getElementById(`url-button-${i}`);
       but.addEventListener('click', () => {
-        // remove that url
         let url = document.getElementById(`url-link-${i}`).innerText;
         chrome.storage.local.get("default-tabs-links", (links) => {
           let urls = links['default-tabs-links'];
