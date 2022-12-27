@@ -1,3 +1,3 @@
 - Styling the popup
-- Refresh whenever a new link is added
 - Icon and descriptions
+- Protection against duplicate links

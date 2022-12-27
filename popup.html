@@ -8,17 +8,16 @@
   <title>Chrome Extension</title>
 </head>
 <body>
-  <!--
-    Need way to add link, remove existing link, get links
-  -->
   <script src = "popup.js"></script>
-  <div class="header">
-    <h3 class="title">Links</h3>
-    <input type="text" id="input-link"></input>
-    <button class="add" id="add-link">Add link</button>
-  </div>
-  <div class="links-list" id="parent">
-    <p>Links: </p>
+  <div>
+    <strong><h2 class="title">Default tabs</h2></strong>
+    <div class="add-tab">
+      <input type="text" id="input-link"></input>
+      <button id="add-link"><strong>Add tab</strong></button>
+    </div>
+    <div class="links-list" id="parent">
+      <strong><h3 class="title">Links</h2></strong>
+    </div>
   </div>
 </body>
 </html>

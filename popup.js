@@ -9,7 +9,6 @@ document.addEventListener("DOMContentLoaded", function(e) {
 
     chrome.storage.local.get("default-tabs-links", (links) => {
       let urls = links['default-tabs-links'];
-      // console.log(urls);
       urls = [ url, ...urls ];
       chrome.storage.local.set({"default-tabs-links": urls});
     });
@@ -31,7 +30,7 @@ document.addEventListener("DOMContentLoaded", function(e) {
       elem.setAttribute("id", `urls-${cnt}`)
       elem.innerHTML = `
         <a href="${url}" target="_blank" id="url-link-${cnt}">${url}</a>
-        <button id="url-button-${cnt}" class="remove-button">Remove</button>
+        <button id="url-button-${cnt}" class="remove-button"><strong>Remove</strong></button>
       `;
       let parent = document.getElementById("parent");
       parent.appendChild(elem);
