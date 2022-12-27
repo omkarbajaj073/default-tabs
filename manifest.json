@@ -1,0 +1,16 @@
+{
+  "short_name": "Default tabs",
+  "name": "Default Tabs Chrome Extension",
+  "manifest_version": 3,
+  "browser_action": {
+    "default_popup": "index.html",
+    "default_title": "Sanity Check",
+    "default_icon": "favicon.ico",
+    "icons": {
+      "16": "favicon.ico",
+      "48": "favicon.ico",
+      "128": "favicon.ico"
+    }
+  },
+  "version": "1.0"
+}
