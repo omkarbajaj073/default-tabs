@@ -3,6 +3,7 @@ body {
   color: #76ffd6;
   font-family: 'verdana';
   max-width: 20rem;
+  min-width: 20rem;
 }
 
 .add-tab {

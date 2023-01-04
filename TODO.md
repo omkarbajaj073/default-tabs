@@ -1,3 +1,4 @@
-- Styling the popup
 - Icon and descriptions
 - Protection against duplicate links
+- Toggle short and long URLs
+- Clear all URLs button
